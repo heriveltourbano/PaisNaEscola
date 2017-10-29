@@ -1,0 +1,39 @@
+
+<div *ngIf="agenda">
+    <h2><span jhiTranslate="paisNaEscolaApp.agenda.detail.title">Agenda</span> {{agenda.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="paisNaEscolaApp.agenda.inicio">Inicio</span></dt>
+        <dd>
+            <span>{{agenda.inicio | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="paisNaEscolaApp.agenda.termino">Termino</span></dt>
+        <dd>
+            <span>{{agenda.termino | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="paisNaEscolaApp.agenda.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{agenda.descricao}}</span>
+        </dd>
+        <dt><span jhiTranslate="paisNaEscolaApp.agenda.classe">Classe</span></dt>
+        <dd>
+            <div *ngIf="agenda.classe">
+                <a [routerLink]="['/classe', agenda.classe?.id]">{{agenda.classe?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'agenda/'+ agenda.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

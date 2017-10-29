@@ -1,0 +1,74 @@
+<div>
+    <h2>
+        <span jhiTranslate="paisNaEscolaApp.agenda.home.title">Agenda</span>
+        <button class="btn btn-primary float-right jh-create-entity create-agenda" [routerLink]="['/', { outlets: { popup: ['agenda-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="paisNaEscolaApp.agenda.home.createLabel">
+            Create new Agenda
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="agenda">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="inicio"><span jhiTranslate="paisNaEscolaApp.agenda.inicio">Inicio</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="termino"><span jhiTranslate="paisNaEscolaApp.agenda.termino">Termino</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="descricao"><span jhiTranslate="paisNaEscolaApp.agenda.descricao">Descricao</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="classe.id"><span jhiTranslate="paisNaEscolaApp.agenda.classe">Classe</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let agenda of agenda ;trackBy: trackId">
+                <td><a [routerLink]="['../agenda', agenda.id ]">{{agenda.id}}</a></td>
+                <td>{{agenda.inicio | date:'medium'}}</td>
+                <td>{{agenda.termino | date:'medium'}}</td>
+                <td>{{agenda.descricao}}</td>
+                <td>
+                    <div *ngIf="agenda.classe">
+                        <a [routerLink]="['../classe', agenda.classe?.id ]" >{{agenda.classe?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../agenda', agenda.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'agenda/'+ agenda.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'agenda/'+ agenda.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <div *ngIf="agenda && agenda.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

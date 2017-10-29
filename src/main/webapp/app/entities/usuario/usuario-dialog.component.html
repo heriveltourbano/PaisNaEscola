@@ -1,0 +1,67 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myUsuarioLabel" jhiTranslate="paisNaEscolaApp.usuario.home.createOrEditLabel">Create or edit a Usuario</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!usuario.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="usuario.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="paisNaEscolaApp.usuario.ativo" for="field_ativo">Ativo</label>
+            <input type="checkbox" class="form-control" name="ativo" id="field_ativo"
+                [(ngModel)]="usuario.ativo"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="paisNaEscolaApp.usuario.celular" for="field_celular">Celular</label>
+            <input type="text" class="form-control" name="celular" id="field_celular"
+                [(ngModel)]="usuario.celular" maxlength="15" />
+            <div [hidden]="!(editForm.controls.celular?.dirty && editForm.controls.celular?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.celular?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 15 }">
+                   This field cannot be longer than 15 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="paisNaEscolaApp.usuario.nascimento" for="field_nascimento">Nascimento</label>
+            <div class="input-group">
+                <input id="field_nascimento" type="text" class="form-control" name="nascimento" ngbDatepicker  #nascimentoDp="ngbDatepicker" [(ngModel)]="usuario.nascimento"
+                required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="nascimentoDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.nascimento?.dirty && editForm.controls.nascimento?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.nascimento?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="paisNaEscolaApp.usuario.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" [(ngModel)]="usuario.user" >
+                <option [ngValue]="null"></option>
+<!--                 <option [ngValue]="userOption.id === usuario.user?.id ? usuario.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+ -->
+                <option [ngValue]="userOption.id === usuario.user?.id ? usuario.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.firstName}} {{userOption.lastName}}</option>
+
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

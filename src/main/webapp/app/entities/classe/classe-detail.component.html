@@ -1,0 +1,47 @@
+
+<div *ngIf="classe">
+    <h2><span jhiTranslate="paisNaEscolaApp.classe.detail.title">Classe</span> {{classe.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="paisNaEscolaApp.classe.anoLetivo">Ano Letivo</span></dt>
+        <dd>
+            <span>{{classe.anoLetivo}}</span>
+        </dd>
+        <dt><span jhiTranslate="paisNaEscolaApp.classe.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{classe.descricao}}</span>
+        </dd>
+        <dt><span jhiTranslate="paisNaEscolaApp.classe.professor">Professor</span></dt>
+        <dd>
+            <span *ngFor="let professor of classe.professors; let last = last">
+                <a [routerLink]="['/professor', professor?.id ]">{{professor.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span jhiTranslate="paisNaEscolaApp.classe.aluno">Aluno</span></dt>
+        <dd>
+            <span *ngFor="let aluno of classe.alunos; let last = last">
+                <a [routerLink]="['/aluno', aluno?.id ]">{{aluno.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span jhiTranslate="paisNaEscolaApp.classe.escola">Escola</span></dt>
+        <dd>
+            <div *ngIf="classe.escola">
+                <a [routerLink]="['/escola', classe.escola?.id]">{{classe.escola?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'classe/'+ classe.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

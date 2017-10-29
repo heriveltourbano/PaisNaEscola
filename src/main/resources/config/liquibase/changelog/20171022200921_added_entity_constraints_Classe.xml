@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Classe.
+    -->
+    <changeSet id="20171022200921-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="classes_id"
+                                 baseTableName="classe_professor"
+                                 constraintName="fk_classe_professor_classes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="classe"/>
+        <addForeignKeyConstraint baseColumnNames="professors_id"
+                                 baseTableName="classe_professor"
+                                 constraintName="fk_classe_professor_professors_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="professor"/>
+        
+        <addForeignKeyConstraint baseColumnNames="classes_id"
+                                 baseTableName="classe_aluno"
+                                 constraintName="fk_classe_aluno_classes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="classe"/>
+        <addForeignKeyConstraint baseColumnNames="alunos_id"
+                                 baseTableName="classe_aluno"
+                                 constraintName="fk_classe_aluno_alunos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="aluno"/>
+        
+        <addForeignKeyConstraint baseColumnNames="escola_id"
+                                 baseTableName="classe"
+                                 constraintName="fk_classe_escola_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="escola"/>
+
+    </changeSet>
+</databaseChangeLog>

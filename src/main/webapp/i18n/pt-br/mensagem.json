@@ -1,0 +1,28 @@
+{
+    "paisNaEscolaApp": {
+        "mensagem" : {
+            "home": {
+                "title": "Mensagens",
+                "createLabel": "Criar nova Mensagem",
+                "createOrEditLabel": "Criar ou editar Mensagem"
+            },
+            "created": "Uma nova Mensagem foi criada com o identificador {{ param }}",
+            "updated": "Uma Mensagem foi atualizada com o identificador {{ param }}",
+            "deleted": "Uma Mensagem foi deletada com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Mensagem {{ id }}?"
+            },
+            "detail": {
+                "title": "Mensagem"
+            },
+            "mensagem": "Mensagem",
+            "situacao": "Situação",
+            "criada": "Criada",
+            "enviada": "Enviada",
+            "recebida": "Recebida",
+            "lida": "Lida",
+            "remetente": "Remetente",
+            "destinatario": "Destinatário"
+        }
+    }
+}

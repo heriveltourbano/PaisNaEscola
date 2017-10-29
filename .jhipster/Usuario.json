@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usuario"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ativo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "celular",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 15
+        },
+        {
+            "fieldName": "nascimento",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171022200915",
+    "javadoc": "Entidade generica de usuarios",
+    "entityTableName": "usuario",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

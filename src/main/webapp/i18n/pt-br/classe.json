@@ -1,0 +1,26 @@
+{
+    "paisNaEscolaApp": {
+        "classe" : {
+            "home": {
+                "title": "Classes",
+                "createLabel": "Criar novo Classe",
+                "createOrEditLabel": "Criar ou editar Classe"
+            },
+            "created": "Um novo Classe foi criado com o identificador {{ param }}",
+            "updated": "Um Classe foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Classe foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Classe {{ id }}?"
+            },
+            "detail": {
+                "title": "Classe"
+            },
+            "anoLetivo": "Ano Letivo",
+            "descricao": "Descricao",
+            "agenda": "Agenda",
+            "professor": "Professor",
+            "aluno": "Aluno",
+            "escola": "Escola"
+        }
+    }
+}

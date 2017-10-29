@@ -1,0 +1,59 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "agenda",
+            "otherEntityName": "agenda",
+            "otherEntityRelationshipName": "classe"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "classe",
+            "relationshipName": "professor",
+            "otherEntityName": "professor",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "classe",
+            "relationshipName": "aluno",
+            "otherEntityName": "aluno",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "escola",
+            "otherEntityName": "escola",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "anoLetivo",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 2017,
+            "fieldValidateRulesMax": 2100
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171022200921",
+    "javadoc": "Entidade Classe",
+    "entityTableName": "classe",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

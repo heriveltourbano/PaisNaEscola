@@ -1,0 +1,11 @@
+{
+    "paisNaEscolaApp": {
+        "SituacaoMsg" : {
+            "null": "",
+            "CRIADA": "CRIADA",
+            "ENVIADA": "ENVIADA",
+            "RECEBIDA": "RECEBIDA",
+            "LIDA": "LIDA"
+        }
+    }
+}

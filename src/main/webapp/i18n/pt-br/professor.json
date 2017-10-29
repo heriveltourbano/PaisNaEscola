@@ -1,0 +1,22 @@
+{
+    "paisNaEscolaApp": {
+        "professor" : {
+            "home": {
+                "title": "Professores",
+                "createLabel": "Criar novo Professor",
+                "createOrEditLabel": "Criar ou editar Professor"
+            },
+            "created": "Um novo Professor foi criado com o identificador {{ param }}",
+            "updated": "Um Professor foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Professor foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Professor {{ id }}?"
+            },
+            "detail": {
+                "title": "Professor"
+            },
+            "usuario": "Usuario",
+            "classe": "Classe"
+        }
+    }
+}

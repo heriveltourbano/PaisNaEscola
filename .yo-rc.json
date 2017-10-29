@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "br.com.unifae.software.eng.paisnaescola",
+      "nativeLanguage": "pt-br"
+    },
+    "jhipsterVersion": "4.6.2",
+    "baseName": "PaisNaEscola",
+    "packageName": "br.com.unifae.software.eng.paisnaescola",
+    "packageFolder": "br/com/unifae/software/eng/paisnaescola",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSocialSignIn": false,
+    "jwtSecretKey": "568f47aca852125412382c95633ec3bf7df61cad",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "yarn",
+    "applicationType": "monolith",
+    "testFrameworks": [
+      "gatling",
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "pt-br",
+    "languages": [
+      "pt-br"
+    ]
+  }
+}

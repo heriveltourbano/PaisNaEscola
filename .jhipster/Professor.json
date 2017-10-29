@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usuario",
+            "otherEntityName": "usuario",
+            "otherEntityField": "nome",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "professor"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "classe",
+            "otherEntityName": "classe",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "professor"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20171022200916",
+    "javadoc": "Entidade Professor",
+    "entityTableName": "professor",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

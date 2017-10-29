@@ -1,0 +1,23 @@
+{
+    "paisNaEscolaApp": {
+        "escola" : {
+            "home": {
+                "title": "Escolas",
+                "createLabel": "Criar novo Escola",
+                "createOrEditLabel": "Criar ou editar Escola"
+            },
+            "created": "Um novo Escola foi criado com o identificador {{ param }}",
+            "updated": "Um Escola foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Escola foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Escola {{ id }}?"
+            },
+            "detail": {
+                "title": "Escola"
+            },
+            "nome": "Nome",
+            "classe": "Classe",
+            "secretaria": "Secretaria"
+        }
+    }
+}

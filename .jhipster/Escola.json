@@ -1,0 +1,34 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "classe",
+            "otherEntityName": "classe",
+            "otherEntityRelationshipName": "escola"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "secretaria",
+            "otherEntityName": "secretaria",
+            "otherEntityRelationshipName": "escola"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": 60
+        }
+    ],
+    "changelogDate": "20171022200920",
+    "javadoc": "Entidade Escola",
+    "entityTableName": "escola",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

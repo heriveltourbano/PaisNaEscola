@@ -1,0 +1,54 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "remetente",
+            "otherEntityName": "usuario",
+            "otherEntityField": "nome",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "mensagem"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "destinatario",
+            "otherEntityName": "usuario",
+            "otherEntityField": "nome",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "mensagem"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "mensagem",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "situacao",
+            "fieldType": "SituacaoMsg",
+            "fieldValues": "CRIADA,ENVIADA,RECEBIDA,LIDA"
+        },
+        {
+            "fieldName": "criada",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "enviada",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "recebida",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lida",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20171022200923",
+    "javadoc": "Entidade Mensagem",
+    "entityTableName": "mensagem",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no"
+}

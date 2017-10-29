@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usuario",
+            "otherEntityName": "usuario",
+            "otherEntityField": "nome",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "aluno"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "aluno",
+            "relationshipName": "responsavel",
+            "otherEntityName": "responsavel",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "classe",
+            "otherEntityName": "classe",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "aluno"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20171022200917",
+    "javadoc": "Entidade Aluno",
+    "entityTableName": "aluno",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

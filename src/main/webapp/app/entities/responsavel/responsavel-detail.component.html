@@ -1,0 +1,30 @@
+
+<div *ngIf="responsavel">
+    <h2><span jhiTranslate="paisNaEscolaApp.responsavel.detail.title">Responsavel</span> {{responsavel.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="paisNaEscolaApp.responsavel.usuario">Usuario</span></dt>
+        <dd>
+<!--             <div *ngIf="responsavel.usuario">
+                <a [routerLink]="['/usuario', responsavel.usuario?.id]">{{responsavel.usuario?.nome}}</a>
+            </div> -->
+            <div *ngIf="responsavel.usuario">
+                <a [routerLink]="['/usuario',responsavel.usuario?.id]">{{responsavel.usuario?.user.firstName}}
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'responsavel/'+ responsavel.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
