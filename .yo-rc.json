@@ -15,15 +15,15 @@
     "websocket": false,
     "databaseType": "sql",
     "devDatabaseType": "h2Disk",
-    "prodDatabaseType": "mysql",
+    "prodDatabaseType": "postgresql",
     "searchEngine": false,
     "messageBroker": false,
     "serviceDiscoveryType": false,
     "buildTool": "gradle",
     "enableSocialSignIn": false,
-    "jwtSecretKey": "568f47aca852125412382c95633ec3bf7df61cad",
+    "jwtSecretKey": "e59077a86b5870567e3245fc99f53fe0a9fd948a",
     "clientFramework": "angularX",
-    "useSass": true,
+    "useSass": false,
     "clientPackageManager": "yarn",
     "applicationType": "monolith",
     "testFrameworks": [
@@ -35,6 +35,7 @@
     "nativeLanguage": "pt-br",
     "languages": [
       "pt-br"
-    ]
+    ],
+    "herokuAppName": "pais-na-escola"
   }
 }
